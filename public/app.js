@@ -84,7 +84,13 @@
             const ctx = document.getElementById('dataChart').getContext('2d');
 
             const labels = result.data.map(item => 
-                new Date(item.timestamp).toLocaleString()
+                new Date(item.timestamp).toLocaleString('ru-RU', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    hour12: false
+                }).replace(',', '')
             );
             const values = result.data.map(item => item[result.field]);
 

@@ -76,7 +76,8 @@ exports.getMetrics = async (req, res) => {
 		if (start_date && end_date) {
 		const startDate = new Date(start_date);
 		const endDate = new Date(end_date);
-
+		endDate.setHours(23, 59, 59, 999);
+		
 		if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
 			return res.status(400).json({ 
 			error: 'Invalid date format. Use YYYY-MM-DD format' 
