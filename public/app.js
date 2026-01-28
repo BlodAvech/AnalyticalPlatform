@@ -73,9 +73,9 @@
 
         function displayMetrics(metrics) {
             document.getElementById('count').textContent = metrics.count;
-            document.getElementById('average').textContent = metrics.average;
-            document.getElementById('minimum').textContent = metrics.minimum;
-            document.getElementById('maximum').textContent = metrics.maximum;
+            document.getElementById('average').textContent = Math.round(metrics.average * 100) / 100;
+            document.getElementById('minimum').textContent =Math.round( metrics.minimum * 100) / 100;
+            document.getElementById('maximum').textContent =Math.round( metrics.maximum * 100) / 100;
             document.getElementById('stdDev').textContent = metrics.standardDeviation;
             document.getElementById('statsContainer').style.display = 'grid';
         }
