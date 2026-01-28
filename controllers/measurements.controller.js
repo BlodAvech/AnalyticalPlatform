@@ -38,7 +38,7 @@ exports.getMeasurement = async (req, res) => {
 			$gte: startDate,
 			$lte: endDate
 		}
-		}).select(`timestamp ${"Temperature (C)"} -_id`).sort({ timestamp: 1 });
+		}).select(`timestamp ${field} -_id`).sort({ timestamp: 1 });
 
 		if (measurements.length === 0) {
 		return res.status(404).json({ 
